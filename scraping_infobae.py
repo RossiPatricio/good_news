@@ -1,8 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-archivo = r'C:\Users\PRossi\Desktop\news\infobae.txt'
-archivo2 = r'C:\Users\PRossi\code\scraping-news\templates\infobae.html'
+archivo = r'C:\Users\PRossi\code\good-news\templates\infobae.html'
 
 def scrap_infobae():
     url = 'https://www.infobae.com'
@@ -58,7 +57,7 @@ article_template = """
 
 articles_html = ''.join([article_template.format(title=article['title'], link=article['link'], image_url=article['image_url']) for article in articles])
 
-with open(archivo2, 'w', encoding='utf-8') as f:
+with open(archivo, 'w', encoding='utf-8') as f:
     f.write(html_template.format(articles=articles_html))
 
 print("Proceso completado: infobae")

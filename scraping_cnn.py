@@ -14,7 +14,7 @@ def scrap_cnn():
         enlace_padre = content.find_parent('a')
         if enlace_padre:
             link = url + enlace_padre['href']
-            lista_de_diccionarios.append[titulo] = link
+            lista_de_diccionarios.append({'Title: ': titulo, 'Link: ': link})
 
     content1 = soup.find_all('div', class_='container__text container_lead-plus-headlines-with-images__text')
     for e in content1:

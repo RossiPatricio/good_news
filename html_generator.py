@@ -1,5 +1,5 @@
 def html_generator(article, portal):
-    file = f'C:\\Users\\PRossi\\code\\scraping-news\\templates\\{portal}.html'
+    file = f'C:\\Users\\PRossi\\code\\good-news\\templates\\{portal}.html'
 
     html_template = """
     <!DOCTYPE html>
