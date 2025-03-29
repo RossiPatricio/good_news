@@ -10,11 +10,11 @@ def scrap_clarin():
 
     noticia_destacada = soup.find('div', class_='sc-458ac523-0 bvJehW')
     link1 = noticia_destacada.a['href']
-    lista_de_diccionarios.append({'Title: ': noticia_destacada.text, 'Link: ': link1})
+    lista_de_diccionarios.append({'title': noticia_destacada.text, 'link': link1, 'portal': 'clarin'})
 
     content = soup.find_all('div', class_='sc-86b8ec52-0 gPQASe onexone')
     for element in content:
         link = element.a['href']
-        lista_de_diccionarios.append({'Title: ': element.text, 'Link: ': link})
+        lista_de_diccionarios.append({'title': element.text, 'link': link, 'portal': 'clarin'})
 
     return lista_de_diccionarios

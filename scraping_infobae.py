@@ -25,7 +25,7 @@ def scrap_infobae():
                 image_url = image.get('src', 'No image found')
             else:
                 image_url = 'No image found'
-            articles.append({'title': title, 'link': article_link, 'image_url': image_url})
+            articles.append({'title': title, 'link': article_link, 'image_url': image_url, 'portal': 'nbc'})
 
     return articles
 

@@ -14,6 +14,6 @@ def scrap_times():
       enlace_padre = element.find_parent('a')
       if enlace_padre:
           noticia_link = enlace_padre['href']
-          lista_de_diccionarios.append({'Title: ': titulo, 'Link: ': noticia_link})
+          lista_de_diccionarios.append({'title': titulo, 'link': noticia_link, 'portal': 'times'})
 
   return lista_de_diccionarios

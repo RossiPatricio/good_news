@@ -25,9 +25,9 @@ def html_generator(article, portal):
     </div>
     """
 
-    articles_html = ''.join([article_template.format(title=articl['Title: '], link=articl['Link: ']) for articl in article])
+    articles_html = ''.join([article_template.format(title=articl['title'], link=articl['link']) for articl in article])
 
     with open(file, 'w', encoding='utf-8') as f:
         f.write(html_template.format(article_content=articles_html))
 
-    print("Proceso completado.")
+    print(f"Proceso completado: {portal}")
