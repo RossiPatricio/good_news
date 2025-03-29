@@ -1,8 +1,5 @@
-from scraping_infobae import *
-from scraping_cnn import *
-from scraping_times import *
-from scraping_clarin import *
-from scraping_nbc import *
+from scraping_infobae import scrap_infobae
+from scraping import *
 from html_generator import *
 from top_news import top_news
 
@@ -10,17 +7,23 @@ scrap_infobae()
 cnn = scrap_cnn()
 clarin = scrap_clarin()
 times = scrap_times()
-nbc= scrape_nbc() 
+nbc= scrap_nbc() 
+cnn_esp= cnn_español()
+cnn_tec= cnn_tecno()
 
-keys= ['Trump','world','Argentina','fmi','Francisco','Messi','2026','programming','movie','Putin','Ukraine','China','Milei','argentino']
+keys= ['Trump','world','Argentina','fmi','Francisco','Messi','2026','programming','movie','Putin',
+       'Milei','argentino', 'nvidia', 'quilmes', 'Oasis', 'Zelensky', 'Kirchner', 'Musk', 'Burton'
+       'Ukraine','Potter', 'Rowling', 'Webb', 'SpaceX', 'NASA']
+
 for key in keys:    
     top = top_news(key)
 
 portals = [
-{'name': 'clarin', 'content':clarin}, 
 {'name': 'cnn', 'content':cnn},
 {'name': 'times', 'content':times},
 {'name': 'nbc', 'content':nbc},
+{'name': 'cnn_tecno', 'content':cnn_tec},
+{'name': 'cnn_esp', 'content':cnn_esp},
 {'name': 'top', 'content':top},
 ]
 
