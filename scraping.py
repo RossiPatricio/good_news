@@ -144,3 +144,29 @@ def scrap_cbs():
         lista_de_diccionarios.append({'title': title, 'link': link, 'image_path': img, 'portal': 'cbs'})
 
     return lista_de_diccionarios
+
+def scrap_infobae():
+    url = 'https://www.infobae.com'
+    articles = []
+    
+    response = requests.get(url)
+    soup = BeautifulSoup(response.content, 'html.parser')
+
+    elements = soup.find_all('h2', class_='story-card-hl headline-link')
+    for e in elements:
+        title = e.text.strip()
+        enlace_padre = e.find_parent('a')
+        if enlace_padre:
+            href = enlace_padre.get('href', '')
+            if not href.startswith('http'):
+                article_link = url + href
+            else:
+                article_link = href
+            image = enlace_padre.find('img', class_='global-image story-card-img')
+            if image:
+                image_url = image.get('src', 'No image found')
+            else:
+                image_url = 'No image found'
+            articles.append({'title': title, 'link': article_link, 'image_url': image_url, 'portal': 'infobae'})
+
+    return articles

@@ -1,9 +1,8 @@
-from scraping_infobae import scrap_infobae
 from scraping import *
 from html_generator import *
 from top_news import top_news
 
-scrap_infobae()
+info = scrap_infobae()
 cnn = scrap_cnn()
 clarin = scrap_clarin()
 times = scrap_times()
@@ -25,6 +24,7 @@ portals = [
 {'name': 'cnn_esp', 'content':cnn_esp},
 {'name': 'top', 'content':top},
 {'name': 'cbs', 'content':cbs},
+{'name': 'infobae', 'content':info},
 ]
 
 for portal in portals:

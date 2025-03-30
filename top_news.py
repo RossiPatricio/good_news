@@ -1,5 +1,4 @@
 from scraping import *
-from scraping_infobae import scrap_infobae
 
 cnn= scrap_cnn()
 times= scrap_times()
