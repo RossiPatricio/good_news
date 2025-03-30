@@ -103,23 +103,44 @@ def cnn_español():
         enlace_padre = e.find_parent('a')
         if enlace_padre:
             link = url + enlace_padre['href']
-            lista_de_diccionarios.append({'title': titulo, 'link': link, 'portal': 'cnn'})        
+            lista_de_diccionarios.append({'title': titulo, 'link': link, 'portal': 'cnn'})   
 
-    return lista_de_diccionarios
-
-def cnn_tecno():
     url = 'https://cnnespanol.cnn.com/ciencia'
     lista_de_diccionarios = []
 
-    response = requests.get(url)
-    soup = BeautifulSoup(response.content, 'html.parser')
+    response2 = requests.get(url)
+    soup2 = BeautifulSoup(response2.content, 'html.parser')
 
-    content2 = soup.find_all('span', class_='container__headline-text')
-    for e in content2:
+    content3 = soup2.find_all('span', class_='container__headline-text')
+    for e in content3:
         titulo = e.text.strip()
         enlace_padre = e.find_parent('a')
         if enlace_padre:
             link = url + enlace_padre['href']
-            lista_de_diccionarios.append({'title': titulo, 'link': link, 'portal': 'cnn'})        
+            lista_de_diccionarios.append({'title': titulo, 'link': link, 'portal': 'cnn'})       
+
+    return lista_de_diccionarios
+
+def scrap_cbs():
+    response = requests.get('https://www.cbsnews.com/')
+    soup = BeautifulSoup(response.content, 'html.parser')
+
+    lista_de_diccionarios= []
+
+    contents = soup.find_all('div', class_='item__title-wrapper')
+
+    for article in contents:
+        title = article.h4.text.strip()
+        enlace_padre = article.find_parent('a')
+
+        if enlace_padre and enlace_padre.find('span'):  # Verifica que enlace_padre no sea None y tenga un <span>
+            link = enlace_padre['href']
+            img_span = enlace_padre.find('span')
+            img_tag = img_span.find('img')  # Busca la imagen dentro del <span>
+
+            if img_tag:  # Verifica que haya un <img> dentro del <span>
+                img = img_tag['src']
+
+        lista_de_diccionarios.append({'title': title, 'link': link, 'image_path': img, 'portal': 'cbs'})
 
     return lista_de_diccionarios

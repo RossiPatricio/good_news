@@ -1,15 +1,17 @@
 from scraping import *
+from scraping_infobae import scrap_infobae
 
 cnn= scrap_cnn()
 times= scrap_times()
 clarin= scrap_clarin()
 nbc= scrap_nbc()
-tecno= cnn_tecno()
 esp= cnn_español()
+info= scrap_infobae()
+cbs= scrap_cbs()
 
 lista_de_diccionarios = []
 def top_news(key_word):
-    portals = [cnn, times, clarin, nbc, tecno, esp]
+    portals = [cnn, times, clarin, nbc, esp, info, cbs]
     
     articles= []
     for portal in portals:

@@ -9,11 +9,11 @@ clarin = scrap_clarin()
 times = scrap_times()
 nbc= scrap_nbc() 
 cnn_esp= cnn_español()
-cnn_tec= cnn_tecno()
+cbs= scrap_cbs()
 
-keys= ['Trump','world','Argentina','fmi','Francisco','Messi','2026','programming','movie','Putin',
-       'Milei','argentino', 'nvidia', 'quilmes', 'Oasis', 'Zelensky', 'Kirchner', 'Musk', 'Burton'
-       'Ukraine','Potter', 'Rowling', 'Webb', 'SpaceX', 'NASA']
+keys= ['Francisco','Messi','2026','programming','movie','Putin', 'Nirvana', 'Michael Jackson',
+       'Milei', 'nvidia', 'Quilmes', 'Oasis', 'Zelensky', 'Kirchner', 'Musk', 'Burton', 'Cobain',
+       'Ukraine','Potter', 'Rowling', 'Webb', 'SpaceX', 'NASA', 'Depp', 'Ucrania', 'Poe']
 
 for key in keys:    
     top = top_news(key)
@@ -22,9 +22,9 @@ portals = [
 {'name': 'cnn', 'content':cnn},
 {'name': 'times', 'content':times},
 {'name': 'nbc', 'content':nbc},
-{'name': 'cnn_tecno', 'content':cnn_tec},
 {'name': 'cnn_esp', 'content':cnn_esp},
 {'name': 'top', 'content':top},
+{'name': 'cbs', 'content':cbs},
 ]
 
 for portal in portals:
