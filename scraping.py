@@ -164,9 +164,9 @@ def scrap_infobae():
                 article_link = href
             image = enlace_padre.find('img', class_='global-image story-card-img')
             if image:
-                image_url = image.get('src', 'No image found')
+                image_path = image.get('src', 'No image found')
             else:
-                image_url = 'No image found'
-            articles.append({'title': title, 'link': article_link, 'image_url': image_url, 'portal': 'infobae'})
+                image_path = 'No image found'
+            articles.append({'title': title, 'link': article_link, 'image_path': image_path, 'portal': 'infobae'})
 
     return articles
