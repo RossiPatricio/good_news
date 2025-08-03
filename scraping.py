@@ -73,6 +73,7 @@ def scrap_nbc():
     return lista_de_diccionarios
 
 def scrap_clarin():
+    #Da error
     url = 'https://www.clarin.com/'
     lista_de_diccionarios = []
 

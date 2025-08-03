@@ -1,5 +1,5 @@
 def html_generator(article, portal):
-    file = f'C:\\Users\\PRossi\\code\\.programming\\2025\\2 march\\good-news\\templates\\{portal}.html'
+    file = f'C:\\Users\\PRossi\\code\\.programming\\.PROJECTS\\5- good-news\\templates\\{portal}.html'
     portal = portal.upper()
     html_template = """
     <!DOCTYPE html>
@@ -31,6 +31,3 @@ def html_generator(article, portal):
         f.write(html_template.format(portal=portal, article_content=articles_html))
     
     print(f"Proceso completado: {portal}")
-
-# Articulos duplicados 
-# Html generator IF IMAGE_PATH
