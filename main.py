@@ -6,7 +6,8 @@ print("Scrapping -INFOBAE-")
 info = scrap_infobae()
 print("Scrapping -CNN-")
 cnn = scrap_cnn()
-#clarin = scrap_clarin()
+print("Scrapping -Clarin-")
+clarin = scrap_clarin()
 print("Scrapping -NEW YORK TIMES-")
 times = scrap_times()
 print("Scrapping -NBC-")
@@ -22,8 +23,9 @@ keys= [
     'Ukraine','Potter', 'Rowling', 'Webb', 'SpaceX', 'NASA', 'Depp', 'Ucrania', 'Poe', 'chess', 
     'Magnus Carlsen', 'argentino', 'Argentina', 'Argentinian', 'tim burton', 'gothic', 'church',
     'jesus', 'yisus', 'ia', 'programming', 'python', 'skateboarding', 'skate', 'inteligencia artifical',
-    'artificial intelligence', 'specie', 'species', 'egypt', 'discovery', 'death', 'died', 'die',
-    '2026 world cup', 'war', 'openai', 'chatgpt', 'deepseek', 'grok', 'ia china', 'rowling','harry potter']
+    'artificial intelligence', 'specie', 'species', 'Egypt', 'discovery', 'death', 'died', 'die',
+    '2026 world cup', 'war', 'openai', 'chatgpt', 'deepseek', 'grok', 'ia china', 'rowling','harry potter',
+    'daniel radcliffe', 'rupert grint', 'emma watson', 'harry potter hbo', 'harry potter series']
 
 for key in keys:    
     top = top_news(key)
@@ -35,7 +37,7 @@ portals = [
 {'name': 'cnn_esp', 'content':cnn_esp},
 {'name': 'top', 'content':top},
 {'name': 'cbs', 'content':cbs},
-#{'name': 'clarin', 'content':clarin}
+{'name': 'clarin', 'content':clarin},
 {'name': 'infobae', 'content':info}]
 for portal in portals:
     name= portal['name']
