@@ -106,7 +106,7 @@ def cnn_español():
             link = url + enlace_padre['href']
             lista_de_diccionarios.append({'title': titulo, 'link': link, 'portal': 'cnn'})   
 
-    url = 'https://cnnespanol.cnn.com/ciencia'
+    url = 'https://cnnespanol.cnn.com/'
     lista_de_diccionarios = []
 
     response2 = requests.get(url)

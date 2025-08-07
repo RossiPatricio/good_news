@@ -29,5 +29,4 @@ def html_generator(article, portal):
 
     with open(file, 'w', encoding='utf-8') as f:
         f.write(html_template.format(portal=portal, article_content=articles_html))
-    
-    print(f"Proceso completado: {portal}")
+

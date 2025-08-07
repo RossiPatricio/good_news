@@ -2,17 +2,28 @@ from scraping import *
 from html_generator import *
 from top_news import top_news
 
+print("Scrapping -INFOBAE-")
 info = scrap_infobae()
+print("Scrapping -CNN-")
 cnn = scrap_cnn()
 #clarin = scrap_clarin()
+print("Scrapping -NEW YORK TIMES-")
 times = scrap_times()
+print("Scrapping -NBC-")
 nbc= scrap_nbc() 
+print("Scrapping -CNN SPANISH-")
 cnn_esp= cnn_español()
+print("Scrapping -CBS-")
 cbs= scrap_cbs()
 
-keys= ['Francisco','Messi','2026','programming','movie','Putin', 'Nirvana', 'Michael Jackson',
-       'Milei', 'nvidia', 'Quilmes', 'Oasis', 'Zelensky', 'Kirchner', 'Musk', 'Burton', 'Cobain',
-       'Ukraine','Potter', 'Rowling', 'Webb', 'SpaceX', 'NASA', 'Depp', 'Ucrania', 'Poe', 'chess', 'Magnus Carlsen']
+keys= [
+    'Francisco','Messi','2026','programming','movie','Putin', 'Nirvana', 'Michael Jackson',
+    'Milei', 'nvidia', 'Quilmes', 'Oasis', 'Zelensky', 'Kirchner', 'Musk', 'Burton', 'Cobain',
+    'Ukraine','Potter', 'Rowling', 'Webb', 'SpaceX', 'NASA', 'Depp', 'Ucrania', 'Poe', 'chess', 
+    'Magnus Carlsen', 'argentino', 'Argentina', 'Argentinian', 'tim burton', 'gothic', 'church',
+    'jesus', 'yisus', 'ia', 'programming', 'python', 'skateboarding', 'skate', 'inteligencia artifical',
+    'artificial intelligence', 'specie', 'species', 'egypt', 'discovery', 'death', 'died', 'die',
+    '2026 world cup', 'war', 'openai', 'chatgpt', 'deepseek', 'grok', 'ia china', 'rowling','harry potter']
 
 for key in keys:    
     top = top_news(key)
