@@ -2,8 +2,12 @@ from scraping import *
 from html_generator import *
 from top_news import top_news
 
-print("Scrapping -INFOBAE-")
-info = scrap_infobae()
+try:
+    print("Scrapping -INFOBAE-")
+    info = scrap_infobae()
+except Exception as e:
+    print(e)
+
 print("Scrapping -CNN-")
 cnn = scrap_cnn()
 print("Scrapping -Clarin-")

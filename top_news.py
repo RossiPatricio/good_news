@@ -9,20 +9,24 @@ info= scrap_infobae()
 cbs= scrap_cbs()
 
 lista_de_diccionarios = []
+
 def top_news(key_word):
-    portals = [cnn, times, clarin, nbc, esp, info, cbs]
-    
-    articles= []
-    for portal in portals:
-        articles.append(portal)
+    try:
+        portals = [cnn, times, clarin, nbc, esp, info, cbs]
+        
+        articles= []
+        for portal in portals:
+            articles.append(portal)
 
-    all_articles=[]
-    for element in articles:
-        for e in element:
-            all_articles.append(e)
+        all_articles=[]
+        for element in articles:
+            for e in element:
+                all_articles.append(e)
 
-    for article in all_articles:
-        if key_word in article['title']:
-            lista_de_diccionarios.append(article)
+        for article in all_articles:
+            if key_word in article['title']:
+                lista_de_diccionarios.append(article)
 
-    return lista_de_diccionarios
+        return lista_de_diccionarios
+    except Exception as e:
+        return e
