@@ -14,28 +14,28 @@ with open('noticias_cnn.txt', 'w', encoding='utf-8') as f:
     print("CNN")
 
 
-info = scrap_cnn()
+info = scrap_times()
 with open('noticias_nbc.txt', 'w', encoding='utf-8') as f:
     for article in info:
         f.write(f"{article['title']}\n{article['link']}\nn")
-    print("NBC")
+    print("nwtimes")
 
 
-info = scrap_cnn()
+info = scrap_cbs()
 with open('noticias_times.txt', 'w', encoding='utf-8') as f:
     for article in info:
         f.write(f"{article['title']}\n{article['link']}\nn")
-    print("Times")
+    print("cbs")
 
 
 info = scrap_cnn()
 with open('noticias_cbs.txt', 'w', encoding='utf-8') as f:
     for article in info:
         f.write(f"{article['title']}\n{article['link']}\nn")
-    print("CBS")
+    print("cnn")
 
 
-info = scrap_cnn()
+info = cnn_español()
 with open('noticias_cnnmx.txt', 'w', encoding='utf-8') as f:
     for article in info:
         f.write(f"{article['title']}\n{article['link']}\nn")

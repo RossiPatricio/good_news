@@ -2,24 +2,15 @@ from scraping import *
 from html_generator import *
 from top_news import top_news
 
-try:
-    print("Scrapping -INFOBAE-")
-    info = scrap_infobae()
-except Exception as e:
-    print(e)
-
-print("Scrapping -CNN-")
-cnn = scrap_cnn()
-print("Scrapping -Clarin-")
-clarin = scrap_clarin()
-print("Scrapping -NEW YORK TIMES-")
-times = scrap_times()
-print("Scrapping -NBC-")
-nbc= scrap_nbc() 
-print("Scrapping -CNN SPANISH-")
-cnn_esp= cnn_español()
-print("Scrapping -CBS-")
-cbs= scrap_cbs()
+scrapers = {
+    "cnn": scrap_cnn(),
+    "clarin": scrap_clarin(),
+    "times": scrap_times(),
+    "cnn_esp": cnn_español(),
+    "nbc": scrap_nbc(),
+    "cbs": scrap_cbs(),
+    "infobae": scrap_infobae(),
+}
 
 keys= [
     'Francisco','Messi','2026','programming','movie','Putin', 'Nirvana', 'Michael Jackson',
@@ -31,19 +22,14 @@ keys= [
     '2026 world cup', 'war', 'openai', 'chatgpt', 'deepseek', 'grok', 'ia china', 'rowling','harry potter',
     'daniel radcliffe', 'rupert grint', 'emma watson', 'harry potter hbo', 'harry potter series']
 
+
+for portals, scraper in scrapers.items():
+    try:
+        content = scraper
+    except:
+        continue
+    name = portals
+    html_generator(content, name)
+
 for key in keys:    
     top = top_news(key)
-
-portals = [
-{'name': 'cnn', 'content':cnn},
-{'name': 'times', 'content':times},
-{'name': 'nbc', 'content':nbc},
-{'name': 'cnn_esp', 'content':cnn_esp},
-{'name': 'top', 'content':top},
-{'name': 'cbs', 'content':cbs},
-{'name': 'clarin', 'content':clarin},
-{'name': 'infobae', 'content':info}]
-for portal in portals:
-    name= portal['name']
-    content= portal['content']
-    html_generator(content, name)
