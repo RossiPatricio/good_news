@@ -26,10 +26,10 @@ keys= [
 for portals, scraper in scrapers.items():
     try:
         content = scraper
+        name = portals
+        html_generator(content, name)
     except:
         continue
-    name = portals
-    html_generator(content, name)
 
 for key in keys:    
     top = top_news(key)
