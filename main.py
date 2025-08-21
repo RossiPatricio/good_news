@@ -26,8 +26,7 @@ keys= [
 for portals, scraper in scrapers.items():
     try:
         content = scraper
-        name = portals
-        html_generator(content, name)
+        html_generator(content, portals)
     except:
         continue
 
